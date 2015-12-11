@@ -1,12 +1,14 @@
 package com.example.micael.examenpmdm;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.micael.examenpmdm.dummy.DummyContent;
@@ -60,8 +62,19 @@ public class ItemDetailFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_item_detail, container, false);
 
         // Show the dummy content as text in a TextView.
+        //Dentro de este if esta el codigo realcionado con la llamada al boton
         if (mItem != null) {
             ((TextView) rootView.findViewById(R.id.item_detail)).setText(mItem.details);
+            //llamada al boton
+            Button bBorrar = (Button) rootView.findViewById(R.id.borrar);
+            //añadiendo metodo onClick al boton
+            bBorrar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                        //intent para volver al activity principal
+                        getActivity().finish();
+                }
+            });
         }
 
         return rootView;
