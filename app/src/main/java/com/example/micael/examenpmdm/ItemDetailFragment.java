@@ -71,12 +71,27 @@ public class ItemDetailFragment extends Fragment {
             bBorrar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    //llamando a este fragmente y comprobando con el if puedo saber si tengo en pantalla el fragment con la lista y de esta manera decidir si vuelvo al activity o si borro el contenido del detalle
+                    ItemListFragment fragment = (ItemListFragment) getFragmentManager().findFragmentById(R.id.item_list);
+                    if (fragment == null || !fragment.isInLayout()) {
                         //intent para volver al activity principal
                         getActivity().finish();
+                    } else {
+                        //aqui llamo al meto para borrar el detalle
+                        erase();
+
+
+                    }
                 }
             });
         }
 
         return rootView;
+    }
+    //aqui creo el metodo con el que borrare el detalle
+    public void erase() {
+        TextView view = (TextView) getView().findViewById(R.id.item_detail);
+        view.setText("");
+
     }
 }
