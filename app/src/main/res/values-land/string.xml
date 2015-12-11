@@ -2,5 +2,5 @@
 <resources>
     <string name="app_name">Repaso</string>
     <string name="title_item_detail">Item Detail</string>
-    <string name="botonBorrar">Hola</string>
+    <string name="botonBorrar">Ok has borrado</string>
 </resources>
