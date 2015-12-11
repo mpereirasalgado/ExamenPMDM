@@ -90,7 +90,7 @@ public class ItemListActivity extends AppCompatActivity
                     .replace(R.id.item_detail_container, fragment)
                     .commit();
             //toast que te dice si estas tumbado al clicar en un item
-            Toast.makeText(getBaseContext(), "Tumbado", Toast.LENGTH_SHORT).show();
+
 
         } else {
             // In single-pane mode, simply start the detail activity
@@ -99,6 +99,12 @@ public class ItemListActivity extends AppCompatActivity
             detailIntent.putExtra(ItemDetailFragment.ARG_ITEM_ID, id);
             //modificacion de la llamada al activity
             startActivityForResult(detailIntent, 1);
+        }
+
+        if(getResources().getBoolean(R.bool.dual_pane)){
+            Toast.makeText(getBaseContext(), "Tumbado", Toast.LENGTH_SHORT).show();
+        }else{
+
         }
     }
     //metodo sobreescrito para recoger de otro activity
