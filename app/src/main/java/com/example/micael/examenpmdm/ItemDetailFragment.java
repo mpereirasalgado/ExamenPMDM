@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.micael.examenpmdm.dummy.DummyContent;
 
@@ -74,7 +75,10 @@ public class ItemDetailFragment extends Fragment {
                     //llamando a este fragmente y comprobando con el if puedo saber si tengo en pantalla el fragment con la lista y de esta manera decidir si vuelvo al activity o si borro el contenido del detalle
                     ItemListFragment fragment = (ItemListFragment) getFragmentManager().findFragmentById(R.id.item_list);
                     if (fragment == null || !fragment.isInLayout()) {
+
                         //intent para volver al activity principal
+                        Intent intentResultado = new Intent();
+                        getActivity().setResult(Activity.RESULT_OK, intentResultado);
                         getActivity().finish();
                     } else {
                         //aqui llamo al meto para borrar el detalle
