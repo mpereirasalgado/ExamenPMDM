@@ -89,6 +89,8 @@ public class ItemListActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.item_detail_container, fragment)
                     .commit();
+            //toast que te dice si estas tumbado al clicar en un item
+            Toast.makeText(getBaseContext(), "Tumbado", Toast.LENGTH_SHORT).show();
 
         } else {
             // In single-pane mode, simply start the detail activity
@@ -105,10 +107,10 @@ public class ItemListActivity extends AppCompatActivity
         if (requestCode == 1){
             if (resultCode == Activity.RESULT_OK){
                 //toast que muestra por pantalla si has salido del activity
+                Toast.makeText(getBaseContext(), "Activity Cerrada", Toast.LENGTH_SHORT).show();
                 Toast.makeText(getBaseContext(), "OK Has vuelto", Toast.LENGTH_SHORT).show();
 
             }
         }
     }
 }
-//He modificado la llamada al activity con un startActivityForResult en el metodo @Override onActivityResult he puesto la toast para que me la muestre

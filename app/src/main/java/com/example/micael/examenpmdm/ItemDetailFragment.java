@@ -83,8 +83,8 @@ public class ItemDetailFragment extends Fragment {
                     } else {
                         //aqui llamo al meto para borrar el detalle
                         erase();
-
-
+                        //toast que te indica si has borrado el detalle
+                        Toast.makeText(getActivity(), "OK Has Borrado", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
